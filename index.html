@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Aarthi | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#090909;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      width:400px;
+      height:400px;
+      background:#ff4fd8;
+      filter:blur(180px);
+      top:-120px;
+      left:-120px;
+      opacity:0.5;
+      z-index:-1;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:350px;
+      height:350px;
+      background:#7a5cff;
+      filter:blur(180px);
+      bottom:-120px;
+      right:-120px;
+      opacity:0.5;
+      z-index:-1;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 10%;
+      position:sticky;
+      top:0;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    nav h1{
+      color:#ff79f8;
+      font-size:28px;
+      text-shadow:0 0 15px #ff79f8;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ff79f8;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h2{
+      font-size:65px;
+      margin-bottom:15px;
+    }
+
+    .hero span{
+      color:#ff79f8;
+      text-shadow:0 0 20px #ff79f8;
+    }
+
+    .typing{
+      font-size:24px;
+      color:#d4d4d4;
+      margin-bottom:25px;
+    }
+
+    .hero p{
+      max-width:700px;
+      line-height:1.8;
+      color:#dddddd;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      padding:14px 35px;
+      border:none;
+      border-radius:40px;
+      background:linear-gradient(45deg,#ff4fd8,#7a5cff);
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 0 25px rgba(255,79,216,0.4);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:40px;
+      color:#ff79f8;
+    }
+
+    .about-box{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:35px;
+      border-radius:25px;
+      backdrop-filter:blur(10px);
+      line-height:1.9;
+      color:#dddddd;
+      box-shadow:0 0 20px rgba(255,79,216,0.15);
+    }
+
+    .skills{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .skill-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:25px 35px;
+      border-radius:20px;
+      transition:0.3s;
+      backdrop-filter:blur(10px);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 25px rgba(255,79,216,0.4);
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#121212;
+      border:1px solid rgba(255,255,255,0.08);
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:scale(1.04);
+      box-shadow:0 0 25px rgba(122,92,255,0.4);
+    }
+
+    .project-card h3{
+      color:#ff79f8;
+      margin-bottom:12px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#aaaaaa;
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+
+      .hero h2{
+        font-size:42px;
+      }
+
+      .typing{
+        font-size:18px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav>
+
+    <h1>Aarthi</h1>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+
+  </nav>
+
+  <section class="hero">
+
+    <h2>Hello, I'm <span>Aarthi</span></h2>
+
+    <div class="typing" id="typing"></div>
+
+    <p>
+      I'm an IT student passionate about learning new things,
+      exploring programming languages, and improving my coding
+      skills every day.
+    </p>
+
+    <button class="btn">Explore My Portfolio</button>
+
+  </section>
+
+  <section id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-box">
+
+      I enjoy learning new technologies and constantly improving my coding skills.
+      Currently learning DSA and exploring different areas of software development
+      while building aesthetic and creative projects.
+
+    </div>
+
+  </section>
+
+  <section id="skills">
+
+    <h2 class="title">Skills</h2>
+
+    <div class="skills">
+
+      <div class="skill-card">C</div>
+
+      <div class="skill-card">Java</div>
+
+      <div class="skill-card">Python</div>
+
+      <div class="skill-card">Currently Learning DSA</div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="projects">
+
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>
+          A dark aesthetic portfolio website with glowing UI effects.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>DSA Journey</h3>
+        <p>
+          Currently practicing and learning Data Structures & Algorithms.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Future Projects</h3>
+        <p>
+          More exciting coding projects coming soon ✨
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    ✨ Designed & Built by Aarthi ✨
+  </footer>
+
+  <script>
+
+    const text =
+    "IT Student • Aspiring Engineer • Currently Learning DSA";
+
+    let i = 0;
+
+    function typingEffect(){
+
+      if(i < text.length){
+
+        document.getElementById("typing").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typingEffect,80);
+      }
+    }
+
+    typingEffect();
+
+  </script>
+
+</body>
+
+</html>
